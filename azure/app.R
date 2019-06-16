@@ -1,6 +1,6 @@
 #
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
 #
 # Find out more about building applications with Shiny here:
 #
@@ -10,8 +10,7 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(
-    dashboardPage(
+ui <- dashboardPage(
     dashboardHeader(title = "Azure"),
     dashboardSidebar(),
     dashboardBody(
@@ -26,4 +25,18 @@ shinyUI(
             )
         )
     )
-))
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+    set.seed(122)
+    histdata <- rnorm(500)
+    
+    output$plot1 <- renderPlot({
+        data <- histdata[seq_len(input$slider)]
+        hist(data)
+    })
+}
+
+# Run the application 
+shinyApp(ui, server)
