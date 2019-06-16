@@ -1,0 +1,6 @@
+﻿Ticker,Company,Type,Purchase Price,Quantity,Value
+BHP.AX,BHP Billton ,ASX200,40,50,2000
+WPL.AX,Woodside,ASX200,34.5,12,414
+WEB.AX,WEB.com,ASX200,24,18,432
+Bond ,Bond,Government Bond,100,10,1000
+ETH,Ethereum,Crypto Currency,18,20,360
