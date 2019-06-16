@@ -8,22 +8,22 @@
 #
 
 library(shiny)
-library(shinydashboard)
-library(shinydashboardPlus)
-library(googlesheets)
-library(BatchGetSymbols)
-library(plotly)
-library(shinythemes)
-library(shinyWidgets)
-library(glue)
-library(DT)
-library(dplyr)
-library(shinyalert)
-library(googledrive)
-library(stringr)
-library(mailR)
-library(lubridate)
-library(googlesheets)
+# library(shinydashboard)
+# library(shinydashboardPlus)
+# library(googlesheets)
+# library(BatchGetSymbols)
+# library(plotly)
+# library(shinythemes)
+# library(shinyWidgets)
+# library(glue)
+# library(DT)
+# library(dplyr)
+# library(shinyalert)
+# library(googledrive)
+# library(stringr)
+# library(mailR)
+# library(lubridate)
+# library(googlesheets)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -35,3 +35,5 @@ shinyServer(function(input, output) {
         hist(data)
     })
 })
+
+
