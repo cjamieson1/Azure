@@ -27,6 +27,7 @@ shinyUI(fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
+            img(src="Fremantle.png",height = "300px"),
             plotOutput("distPlot")
         )
     )
