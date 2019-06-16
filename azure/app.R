@@ -3,11 +3,18 @@ library(shiny)
 library(shinydashboard)
 library(shinydashboardPlus)
 library(googlesheets)
+library(BatchGetSymbols)
+library(plotly)
+library(shinythemes)
+library(shinyWidgets)
+library(glue)
+library(DT)
 
 ui <- dashboardPage(
     dashboardHeader(title = "Azure"),
     dashboardSidebar(),
     dashboardBody(
+        img(src = "Fremantle.png",height = "300px"),
         # Boxes need to be put in a row (or column)
         fluidRow(
             box(plotOutput("plot1", height = 250)),
