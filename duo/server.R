@@ -12,6 +12,8 @@ library(shiny)
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
 cat("This is duo file running")
+    df <- data.frame("name"=c("Chris","age"=c(22)))
+    write.csv(df,"Data.csv")
     output$distPlot <- renderPlot({
 
         # generate bins based on input$bins from ui.R
