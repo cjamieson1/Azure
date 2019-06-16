@@ -3,6 +3,12 @@ library(shiny)
 library(shinydashboard)
 library(shinydashboardPlus)
 library(googlesheets)
+library(BatchGetSymbols)
+library(plotly)
+library(shinythemes)
+library(shinyWidgets)
+library(glue)
+library(DT)
 
 ui <- dashboardPage(
     dashboardHeader(title = "Azure"),
