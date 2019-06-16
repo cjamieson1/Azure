@@ -1,6 +1,8 @@
 ## app.R ##
 library(shiny)
 library(shinydashboard)
+library(shinydashboardPlus)
+library(googlesheets)
 
 ui <- dashboardPage(
     dashboardHeader(title = "Azure"),
