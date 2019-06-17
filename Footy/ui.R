@@ -101,6 +101,7 @@ ui <- dashboardPage(
         "dashboard",
         h1(align="center","Welcome Back"),
         br(),
+        #img(src="dash.png",width="100%"),
         fluidPage(
         uiOutput("dashuserinfo")
         )
