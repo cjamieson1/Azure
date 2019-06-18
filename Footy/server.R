@@ -2,6 +2,7 @@
 shinyServer(
   server <- function(input, output, session) {
     
+    options(stringsAsFactors = FALSE)
     getfixture <- download.file("https://fixturedownload.com/download/afl-2019-AUSEasternStandardTime.csv",destfile = "fixtures.csv")
     
     winningteam <- function(data){
@@ -446,8 +447,9 @@ shinyServer(
       currentdata <- latestdata
       currentdata <- dplyr::mutate(currentdata,Home.Score=substr(Result,1,3))
       currentdata <- dplyr::mutate(currentdata,Away.Score=substr(Result,6,8))
-      rounddata <- dplyr::filter(currentdata,Round.Number==selectedround)
-      print(rounddata)
+      rounddata <- dplyr::filter(currentdata,Round.Number==selectedround) 
+      print(class(rounddata))
+      rounddata
     })
    
    usertippingdata <- reactive({
@@ -455,6 +457,8 @@ shinyServer(
      filename <- paste0("Tips/",UserLogged,".Rds")
      tipdata <- readRDS(filename)
      rounddata <- dplyr::filter(tipdata,Round.Number==selectedround)
+     print(class(rounddata))
+     rounddata
    })
     
     #### Match 1 ####
