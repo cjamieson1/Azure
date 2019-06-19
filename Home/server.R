@@ -1,6 +1,8 @@
 shinyServer(
   server <- function(input, output, session) {
     
+    
+  options(stringsAsFactors = FALSE)
    download.file("https://www.asx.com.au/asx/research/ASXListedCompanies.csv",destfile = "Data/ASXData.csv")
     ASXTickers <<- read.csv(file="Data/ASXData.csv",skip = 2)
   
@@ -23,7 +25,8 @@ shinyServer(
                       "Entering the Matrix..."
                       )
 
- loadingoptions <<- loadingoptionsPG
+
+ loadingoptions <<- "Loading Data" #oadingoptionsPG
                       
   
     # User Login ----------------------------------------------------------
@@ -230,7 +233,7 @@ shinyServer(
         fluidRow(
           
           #column(8,selectizeInput(inputId = "symb","Search Ticker",c("BHP.AX","WPL.AX"),width = "100%")),
-           column(6,box(width = "100%",solidHeader = F,status = "primary",selectizeInput(inputId = "symb","Search Ticker",selected = "BHP - BHP GROUP LIMITED",paste(ASXTickers$ASX.code,"-",ASXTickers$Company.name),multiple = F,width = "100%"))),
+           column(6,box(width = "100%",solidHeader = F,status = "primary",selectizeInput(inputId = "symb","Search Ticker",selected = "WPL - WOODSIDE PETROLEUM LTD",paste(ASXTickers$ASX.code,"-",ASXTickers$Company.name),multiple = F,width = "100%"))),
            column(6,align="center",box(width = "100%",solidHeader = F,status = "primary",h4("Download Company Wrap"),
                   downloadButton("StockWrap",label = "Company Wrap")))
         )
@@ -496,7 +499,7 @@ shinyServer(
        fluidRow(
          
          #column(8,selectizeInput(inputId = "symb","Search Ticker",c("BHP.AX","WPL.AX"),width = "100%")),
-         column(6,box(width = "100%",solidHeader = F,status = "primary",selectizeInput(inputId = "symbFin","Search Ticker",selected = "BHP - BHP GROUP LIMITED",paste(ASXTickers$ASX.code,"-",ASXTickers$Company.name),multiple = F,width = "100%"))),
+         column(6,box(width = "100%",solidHeader = F,status = "primary",selectizeInput(inputId = "symbFin","Search Ticker",selected = "WPL - WOODSIDE PETROLEUM LTD",paste(ASXTickers$ASX.code,"-",ASXTickers$Company.name),multiple = F,width = "100%"))),
          column(6,align="center",box(width = "100%",solidHeader = F,status = "primary",h4("Download Company Wrap"),
                                      downloadButton("StockWrapFin",label = "Company Wrap")))
        )

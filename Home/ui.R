@@ -318,7 +318,11 @@ tabItem("newuser",
                                  ),
                                  column(2)),
                         fluidRow(
-                          h5(align = "center","This application was initially set up as a means of recording hours done by myself and a few mates whilst doing commentary on the ASX for Stocks in Play.\n\n The commentary requiring up to date market data and quick analysis of the market prompted me to puch my skills to the test and see what i could come up with.\n\n Everything on the site is not perfect, and all the data is obtained from free sources so may not always be 100% correct or validated. \n\n Hope you enjoy the site!")
+                          br(),
+                          h3(align = "center","This application was initially set up as a means of recording hours done by myself and a few mates whilst doing commentary on the ASX for Stocks in Play."),
+                          h3(align = "center","The commentary requiring up to date market data and quick analysis of the market prompted me to put my skills to the test and see what i could come up with.\n\n Everything on the site is not perfect, and all the data is obtained from free sources so may not always be 100% correct or validated."),
+                          br(),
+                          h3(align = "center",strong("Hope you enjoy the site!"))
                         )
                         
                         # fluidRow(column(2),

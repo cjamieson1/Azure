@@ -66,6 +66,7 @@ getFin <- function(stock){
 
 
 HashtagStocks <- function(text,ASXTickers){
+  options(stringsAsFactors = FALSE)
   hashtags <- str_extract_all(text, "#\\S+")
   hash <- as.data.frame(hashtags,stringsAsFactors = F)
   ticks <- toupper(substr(hash[,1],2,4))
@@ -144,7 +145,7 @@ getShorts <- function(ndays){
   shorts<- shorts[validshorts,]
   #change1 <- shorts$`Reported Short Positions`-shortsMonth$Reported.Short.Positions 
   change2 <- shorts$Percent-shortsMonth$X..of.Total.Product.in.Issue.Reported.as.Short.Positions
-  shortdata <- cbind(shorts,change2)
+  shortdata <- cbind(shorts,change2/100)
   #shortdata[,c(3,4,5,6)] <- round(shortdata[,c(3,4,5,6)],2)
   names(shortdata)<- c("Company","Ticker","Reported Short Positions","Total Shares on Issue","% Short Positions","Change")
   ordered <- shortdata[order(shortdata[,5],decreasing = T),]
