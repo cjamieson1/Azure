@@ -91,7 +91,7 @@ shinyServer(
             id = "postlogin",
             menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard"),selected = T),
             menuItem("Moving Now", tabName = "daymovers", icon = icon("rocket"),selected = F,badgeLabel = "live",badgeColor = "navy"),
-            menuItem("Heat Map", tabName = "heatmap", icon = icon("map"),selected = F),
+            #menuItem("Heat Map", tabName = "heatmap", icon = icon("map"),selected = F),
             menuItem("Statistics", tabName = "stats",icon = icon("brain"),selected = F),
             menuItem("StockTracker", icon = icon("chart-pie"),startExpanded = F,
                      menuSubItem("Biggest Movers", tabName = "movers",icon = icon("rocket")),
