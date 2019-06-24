@@ -4,7 +4,7 @@ ui <- dashboardPage(
   skin = "blue",
   
   dashboardHeader(
-    title = "Just the tips",
+    title = "Just Tips",
     disable = F,
     tags$li(class = "dropdown", style = "padding: 8px;"),
     #shinyauthr::logoutUI("logout")),

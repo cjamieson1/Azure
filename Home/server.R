@@ -479,7 +479,7 @@ shinyServer(
        formatPercentage(c("Change"),digits = 2) %>% 
        formatStyle(
          c("Change"),
-         color = styleInterval(c(-0.0001,0.0001), c('white',"white",'white')),
+         color = "white",
          backgroundColor = styleInterval(c(-0.0001,0), c('red',"black",'green'))
        )
           }) 
